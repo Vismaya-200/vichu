@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form of Nomination</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Include jsPDF from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="form-container">
         <h2>Form of Nomination [See Rule 5(1)]</h2>
-        <form>
+        <form id="nominationForm">
             <div class="form-group">
                 <label for="name">I, (Name):</label>
                 <input type="text" id="name" name="name" required>
@@ -75,8 +79,9 @@
                 <label for="head_office">Countersignature by Head of Office (if applicable):</label>
                 <textarea id="head_office" name="head_office"></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button type="button" onclick="generatePDF()">Generate PDF</button>
         </form>
     </div>
 </body>
 </html>
+
